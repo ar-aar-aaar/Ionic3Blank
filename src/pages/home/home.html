@@ -6,9 +6,27 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  
+  <h1>Curso Ionic 3</h1>
+  <br> 
+  <br>
+  <br>
+  <div>
+      <ion-item>
+          <ion-label floating>Usuario</ion-label>
+          <ion-input [(ngModel)]="user" value=""></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Grupo</ion-label>
+            <ion-input [(ngModel)]="group"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Cantidad</ion-label>
+          <ion-input [(ngModel)]="money"></ion-input>
+    </ion-item>
+  </div>
+  <h3>Usuario => {{user}}</h3>
+  <h3>Grupo => {{group}}</h3>
+  <button ion-button round color="curso" (click)="goAbout()">Soy yo</button>
 </ion-content>

@@ -1,0 +1,25 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{user | miPipe}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{data.date| date:"dd MMMM yyyy"}}</h1>
+  <br>
+  <h1>Cantidad es {{data.money | percent}}</h1>
+  <button ion-button round (click)="goCustomer()">Pushea</button>
+
+  <ion-item  *ngFor="let course of data.groups; let i= index">
+          <ion-label [color]="(i%2)==0 ? 'primary' : 'danger'">{{course}}</ion-label>
+    </ion-item>
+
+</ion-content>
+
+
