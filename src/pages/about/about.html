@@ -10,16 +10,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>{{data.date| date:"dd MMMM yyyy"}}</h1>
+  <!-- <h1>{{data.date| date:"dd MMMM yyyy"}}</h1>
   <br>
   <h1>Cantidad es {{data.money | percent}}</h1>
   <button ion-button round (click)="goCustomer()">Pushea</button>
 
   <ion-item  *ngFor="let course of data.groups; let i= index">
           <ion-label [color]="(i%2)==0 ? 'primary' : 'danger'">{{course}}</ion-label>
-    </ion-item>
+    </ion-item> -->
 
+<ion-content class="wrapper">
+  <div
+    class="wrapper-info"
+    *ngFor="let group of data.groups; let i = index;"
+    [ngClass]="{'course-one': i===0,
+                'course-two': i===1, 
+                'course-three': i===2
+                }">
+    <h1>Curso: {{group}}</h1>
+    <h1>Nombre: {{user | uppercase}}</h1>
+    <h1>Precio: {{data.money | currency:"MXN"}}</h1>
+    <h1>Date: {{data.date | date:"dd MMMM yyyy"}}</h1>
+  </div>
 </ion-content>
 
 

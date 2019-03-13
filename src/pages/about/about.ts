@@ -16,6 +16,7 @@ export class AboutPage {
   user:string;
   data: any;
   colorLabel:any;
+  color:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.data=this.navParams.data;
