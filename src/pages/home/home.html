@@ -1,32 +1,37 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Beca Java 2019
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   
-  <h1>Curso Ionic 3</h1>
+  <h1>Inicio de sesión</h1>
   <br> 
   <br>
   <br>
-  <div>
+  <div class="wrapper" [formGroup]="loginForm">
       <ion-item>
           <ion-label floating>Usuario</ion-label>
-          <ion-input [(ngModel)]="user" value=""></ion-input>
+          <ion-input formControlName="user" value=""></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>Grupo</ion-label>
-            <ion-input [(ngModel)]="group"></ion-input>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
-      <ion-item>
-          <ion-label floating>Cantidad</ion-label>
-          <ion-input [(ngModel)]="money"></ion-input>
-    </ion-item>
   </div>
-  <h3>Usuario => {{user}}</h3>
-  <h3>Grupo => {{group}}</h3>
-  <button ion-button round color="curso" (click)="goAbout()">Soy yo</button>
+  <br>
+  <div class="wrapper-buttons">
+    <button ion-button round 
+          [color]="loginForm.valid ? 'primary' : 'danger'" 
+          (click)="login()" 
+          [disabled]="!loginForm.valid">Iniciar sesión</button>
+
+          <br>
+  <button ion-button round clear
+  (click)="goCreateAccount()">Crear cuenta</button>
+  </div>
+  
 </ion-content>

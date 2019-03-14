@@ -1,0 +1,46 @@
+<!--
+  Generated template for the CreateAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Crea tu Cuenta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div [formGroup]="createAccountForm">
+    <ion-item>
+      <ion-label floating>Nombre*</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Apellido Paterno*</ion-label>
+      <ion-input formControlName="app"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Apellido Materno</ion-label>
+        <ion-input formControlName="apm"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Email*</ion-label>
+        <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Matricula*</ion-label>
+        <ion-input formControlName="matricula"></ion-input>
+    </ion-item>
+  </div>
+  <br>
+  <div class="wrapper-buttons">
+    <button ion-button round 
+          [color]="createAccountForm.valid ? 'primary' : 'danger'" 
+          [disabled]="!createAccountForm.valid"
+          (click)="confirm()">Iniciar sesión</button>
+
+          <br>
+  </div>
+
+</ion-content>

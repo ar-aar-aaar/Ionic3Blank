@@ -18,16 +18,16 @@ page-about {
     }
     .course-two{
         border-radius: 5px;
-        border-left-style: dashed;
+        border-left-style: dotted;
         border-left-width: 5px;
         border-left-color: color($colors,"dark");
         background-color: color($colors,"curso");
     }
     .course-three{
         border-radius: 5px;
-        border-left-style: dashed;
+        border-left-style: double;
         border-left-width: 5px;
-        border-left-color: color($colors,"light");
+        border-left-color: color($colors,"otro");
         background-color: color($colors,"secondary");
     }
 

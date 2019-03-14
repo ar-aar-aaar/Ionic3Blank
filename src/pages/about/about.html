@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>{{user | miPipe}}</ion-title>
+    <ion-title>{{nombre}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -21,16 +21,11 @@
 
 <ion-content class="wrapper">
   <div
-    class="wrapper-info"
-    *ngFor="let group of data.groups; let i = index;"
-    [ngClass]="{'course-one': i===0,
-                'course-two': i===1, 
-                'course-three': i===2
-                }">
-    <h1>Curso: {{group}}</h1>
-    <h1>Nombre: {{user | uppercase}}</h1>
-    <h1>Precio: {{data.money | currency:"MXN"}}</h1>
-    <h1>Date: {{data.date | date:"dd MMMM yyyy"}}</h1>
+    class="wrapper-info">
+
+    <card *ngFor="let item of students" 
+    [student]="item"
+    (click-card)="deleteCard($event)"></card>
   </div>
 </ion-content>
 
